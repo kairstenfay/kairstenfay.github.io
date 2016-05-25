@@ -1,6 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
+    background-image: ("https://pixabay.com/static/uploads/photo/2015/08/04/22/00/floral-875276_960_720.jpg");
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
