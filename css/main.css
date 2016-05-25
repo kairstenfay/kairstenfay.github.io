@@ -2,6 +2,7 @@ body {
     margin: 60px auto;
     width: 70%;
     background-image: url("http://www.publicdomainpictures.net/pictures/120000/velka/vintage-roses-floral-background.jpg");
+    background-attachment: fixed;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
