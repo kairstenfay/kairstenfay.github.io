@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
-    background-image: url("http://img11.deviantart.net/4edd/i/2011/029/2/5/geometric_islamic_pattern_by_stoostock-d38b3kt.jpg");
+    background-image: url("https://c2.staticflickr.com/6/5087/5361721119_42bdd80af5_z.jpg");
     background-attachment: fixed;
 }
 nav ul, footer ul {
@@ -46,5 +46,5 @@ ul.posts li {
 
 div {
     background-color: #fff;
-    padding: 200px;
+    padding: 50px;
 }
