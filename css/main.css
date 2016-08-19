@@ -52,7 +52,6 @@ div {
 
 img {
     max-width: 30%;
-    max-height: auto;
-    height: auto;
+    max-height: 80%;
     float: right;
 }
