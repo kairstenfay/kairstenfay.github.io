@@ -49,3 +49,8 @@ div {
     background-color: #fff;
     padding: 50px;
 }
+
+img {
+    max-width: 20%;
+    height: auto;
+}
