@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Kairsten Fay, Data Scientist, Launches Site"
+title: "HelloWorld!"
 date: 2016-05-13
 ---
 
-Well. Finally got around to putting this old website together. Neat thing about it - powered by [Jekyll](http://jekyllrb.com) and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.
+Welcome to my website. I plan to use blogs to post data science projects. Please stay tuned! I would also like to give a shoutout to [Jekyll](http://jekyllrb.com) for their awesome Markdown tutorial which helped me set up this website. Thank goodness for open source technology!
