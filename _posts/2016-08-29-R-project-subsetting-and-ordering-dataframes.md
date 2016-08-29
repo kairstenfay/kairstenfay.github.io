@@ -17,4 +17,4 @@ Please see my solutions below.
 
 [rankall.R](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/rankall.R)
 
- 
+I'd like to thank [DanieleP](https://github.com/DanieleP), whose [tutorial](https://github.com/DanieleP/PA3-tutorial/blob/master/README.md) for this problem gave me a set of functions to build from in order to complete the assignment. 
