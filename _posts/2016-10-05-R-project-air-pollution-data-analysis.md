@@ -11,51 +11,49 @@ assignment using the base plotting system, `ggplot2`, and `dplyr` packages.
 
 The data for this project are available for download at the EPA website [here.](http://aqsdr1.epa.gov/aqsweb/aqstmp/airdata/download_files.html)
 
-#Codebook
+## Codebook
   
-    PM2.5 Emissions Data. contains all of PM2.5 emissions data for '99, '02, '05, '08.
-    For each year, the table contains number of tons of PM2.5 emitted from a specific type
-    of source for the entire year.
-   
-    file name: [summarySCC_PM25.rds](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/summarySCC_PM25.rds)
- 
+### PM2.5 Emissions Data. 
 
+Contains all of PM2.5 emissions data for '99, '02, '05, '08.
+For each year, the table contains number of tons of PM2.5 emitted from a specific type
+of source for the entire year.
    
-    ###Column names: 
-   
-   	fips: county code
-   
-   	SCC: name of source
-   
-   	Pollutant: pollutant type; string
-   
-   	Emissions: amount of PM2.5 emitted, in tons
-   
-   	type: Type of source, i.e. point or non-point
-   
-   	year: year of emissions record
-   
-   
-   
-   
-    Source Classification Code Table. provies a mapping from the SCC digit strings in the
-    Emissions Data to the actual name of the PM2.5 source. The sources are categorized in a
-    few different ways from more general to more specific. For ex, source "10100101" is known as
-    "Ext Comb/Electric Gen/Anthracite Coal/Pulverized Coal".
+file name: [summarySCC_PM25.rds](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/summarySCC_PM25.rds)
  
-    file name: [Source_Classification_Code.rds](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/Source_Classification_Code.rds)
+#### Column names: 
+   
+* fips: county code
+   
+* SCC: name of source
+   
+* Pollutant: pollutant type; string
+   
+* Emissions: amount of PM2.5 emitted, in tons
+   
+* type: Type of source, i.e. point or non-point
+   
+* year: year of emissions record
+   
+   
+### Source Classification Code Table.
+Provides a mapping from the SCC digit strings in the PM2.5 emissions data to the actual name
+ of the PM2.5 source. The sources are categorized in a few different ways from more general 
+ to more specific. For ex, source "10100101" is known as "Ext Comb/Electric Gen/Anthracite Coal/Pulverized Coal".
+ 
+file name: [Source_Classification_Code.rds](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/Source_Classification_Code.rds)
 
 
 
 The following assignment description was taken directly from my class.
 
-#Assignment
+# Assignment
 
 The overall goal of this assignment is to explore the National Emissions Inventory database 
 and see what it say about fine particulate matter pollution in the United states over the 
 10-year period 1999–2008. You may use any R package you want to support your analysis.
 
-##Questions
+## Questions
 
 You must address the following questions and tasks in your exploratory analysis. For each 
 question/task you will need to make a single plot. Unless specified, you can use any 
@@ -85,7 +83,7 @@ greater changes over time in motor vehicle emissions?
 
 
 
-#My Answers
+## My Answers
 
 1. [plot1.png](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/plot1.png), 
 [plot1.R](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/plot1.R)
