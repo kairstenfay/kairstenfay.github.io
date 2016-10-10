@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Publication: Genetic and Genomic Response to Selection for Food Consumption in *Drosophila melanogaster*"
+title: "Publication: Behavior Genetics 2016"
 date: 2016-10-06
 ---
 # Success!
@@ -12,5 +12,5 @@ for Food Consumption in *Drosophila melanogaster*".
 
 If you're interested, read more medical writing work by the first author, [Dr. Megan Garlapow.](https://megangarlapow.com/home/writing_samples/)
 
-![Hard at work](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/Publications/Fay-Genetics-lab-NCSU-twitter.jpg)
+![Hard at work](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/Publications/Fay-Genetics-lab-NCSU-twitter.jpg?raw=true)
 
