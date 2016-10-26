@@ -9,8 +9,8 @@ analysis of the negative impacts storm events have historically had on US popula
 
 
 We were given the following National Weather Service data:
-- A zipped [CSV of Storm Data](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/repdata%2Fdata%2FStormData.csv.bz2)
-- A [codebook](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/NWS_Storm_data_documentation.pdf) explaining the variables.
+- A zipped [CSV of Storm Data](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/repdata%2Fdata%2FStormData.csv.bz2) 
+- A [codebook](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/NWS_Storm_data_documentation.pdf) explaining the variables 
 - A [Storm Data FAQ](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/National_Climatic_Data_Center_Storm_Events_FAQ.pdf) page
 
 
