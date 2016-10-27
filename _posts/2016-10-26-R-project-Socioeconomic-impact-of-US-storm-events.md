@@ -8,13 +8,15 @@ For this assignment from my Reproducible Research class at [Coursera](https://ww
 analysis of the negative impacts storm events have historically had on US population, property, and crops.
 
 
-We were given the following National Weather Service data:  
+We were given the following National Weather Service data.
+  
 -   A compressed [CSV of Storm Data](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/repdata%252Fdata%252FStormData.csv.bz2)
--   A [codebook](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/NWS_Storm_data_documentation.pdf) explaining the variables  
+-   A [codebook](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/NWS_Storm_data_documentation.pdf) explaining the variables
 -   A [Storm Data FAQ](https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/National_Climatic_Data_Center_Storm_Events_FAQ.pdf) page  
 
 The audience for this assignment was my fellow classmates. As we were expected to read the provided
-documentation, it was assumed that we knew the following:  
+documentation, it was assumed that we knew the following.
+  
 -   `EVTYPE`: stands for the storm event type, i.e. hurricane/typhoon or tornado
 -   `FATALITIES`: represents the number of people killed during a storm event
 -   `INJURIES`: represents the number of people injured during a storm event 
