@@ -1,19 +1,14 @@
 ---
 layout: post
-title: "Machine Learning "
-date: 2016-11-04
+title: "Machine Learning with the Titanic in R"
+date: 2016-11-19
 ---
 
 Here, I give a walkthrough of my submission to [Kaggle's](http://www.kaggle.com) famous 
-[Titanic Machine Learning competition](https://www.kaggle.com/c/titanic)
-
-The audience for this project was my fellow classmates. This project was meant to be 
-extremely thorough and 100% reproducible. In a business setting, I would exclude the code
-and trim the walkthrough process. I'd suggest that those interested in more detail see the 
-full report.
-
+[Titanic Machine Learning competition](https://www.kaggle.com/c/titanic). I achieved an 
+accuracy of 82% with my random forest algorithm, placing me in the top 3% of teams.
   
-Please view my [RPubs document](http://rpubs.com/kafay/Seattle-summer-crime-data-2014-analysis)
-to view my full report. 
+Please view my [RPubs document](http://rpubs.com/kafay/Machine-Learning-with-Titanic-R)
+for my walkthrough. The raw code is found in a link at the bottom of the RPubs document.  
 
 
