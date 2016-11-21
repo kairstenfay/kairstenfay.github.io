@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Publication: Behavior Genetics 2016"
+title: "New publication: Behavior Genetics 2016"
 date: 2016-10-10
 ---
 # Success!

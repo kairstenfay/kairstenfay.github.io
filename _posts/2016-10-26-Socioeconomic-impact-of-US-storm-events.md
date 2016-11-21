@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "R project: Socioeconomic Impact of US Storm Events"
+title: "Socioeconomic Impact of US Storm Events"
 date: 2016-10-26
 ---
 
