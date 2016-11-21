@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "R project: Seattle Summer 2014 Crime Data Analysis"
+title: "Seattle summer 2014 crime analysis"
 date: 2016-11-04
 ---
 
