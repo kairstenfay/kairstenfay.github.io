@@ -3,7 +3,9 @@ layout: post
 title: "Seattle summer 2014 crime analysis"
 date: 2016-11-04
 ---
-
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Police_Line_Crime_Scene_2498847226.jpg" alt="Source: Wikimedia Commons" width="600px" />
+</center>
+  
 Here, I completed an analysis of the crimes that occurred in Seattle during the
 summer of 2014. Analysis question included: Which are the most common crimes? What hour of
 the day do the most crimes occur? and more.  
