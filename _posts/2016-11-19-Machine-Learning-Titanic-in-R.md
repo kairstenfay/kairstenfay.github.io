@@ -3,9 +3,9 @@ layout: post
 title: "Machine Learning with the Titanic in R"
 date: 2016-11-19
 ---
-![RMS Titanic. Source: Wikipedia commmons](https://upload.wikimedia.org/wikipedia/commons/d/d7/Sea_Trials_of_RMS_Titanic,_2nd_of_April_1912.jpg =600x)
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Sea_Trials_of_RMS_Titanic,_2nd_of_April_1912.jpg" alt="RMS Titanic. Source: Wikipedia commmons" width="600px" />
 
-
+  
 Here, I give a walkthrough of my submission to [Kaggle's](http://www.kaggle.com) famous 
 [Titanic Machine Learning competition](https://www.kaggle.com/c/titanic). I achieved an 
 accuracy of 82% with my random forest algorithm, placing me in the top 3% of teams.
