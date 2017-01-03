@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Memoirs of Meddling through Museums' Mammal Collections"
-date: 2016-05-13
+date: 2016-05-31
 ---
 
 I wrote about my recent trip to museums in the U.S. Northeast for my PI's website. Read it
