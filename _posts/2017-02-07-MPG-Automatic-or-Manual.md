@@ -3,7 +3,7 @@ layout: post
 title: "Maximizing Mileage: Automatic or Manual?"
 date: 2017-02-07
 ---
-<center><img src="https://cdn.pixabay.com/photo/2014/03/25/15/22/gas-station-296598_1280.png" alt="Source: Pixabay" width="300 px" />
+<center><img src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/R-projects/gas_icon_pixabay.png?raw=true" alt="Source: Pixabay" width="300 px" />
 </center>
   
 This assignment was a final project for one of my Coursera classes on linear regression
