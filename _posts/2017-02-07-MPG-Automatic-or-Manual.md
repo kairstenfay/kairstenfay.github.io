@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Maximizing MPG: Automatic or Manual?"
+title: "Maximizing Mileage: Automatic or Manual?"
 date: 2017-02-07
 ---
 <center><img src="https://cdn.pixabay.com/photo/2014/03/25/15/22/gas-station-296598_1280.png" alt="Source: Pixabay" width="300 px" />
