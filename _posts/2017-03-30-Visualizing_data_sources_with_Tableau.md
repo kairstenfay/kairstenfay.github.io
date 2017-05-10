@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Visualizing Data Sources with Tableau
+title: "Visualizing Data Sources with Tableau"
 date: 2017-03-30
 ---
 <center><img src="https://github.com/kairstenfay/kairstenfay.github.io/tree/master/images/data_ball.png" width="" />
