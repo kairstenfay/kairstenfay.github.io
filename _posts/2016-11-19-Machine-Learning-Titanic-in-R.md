@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine Learning with the Titanic in R"
+title: "Predicting Survival on the Titanic using Machine Learning in R"
 date: 2016-11-19
 ---
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Sea_Trials_of_RMS_Titanic,_2nd_of_April_1912.jpg" alt="RMS Titanic. Source: Wikimedia Commmons" width="600px" />
