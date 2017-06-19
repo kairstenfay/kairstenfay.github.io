@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Major Industrial Disasters Since 2010"
-date: 2018-06-18
+date: 2017-06-18
 ---
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Dhaka_Savar_Building_Collapse.jpg" width="600 px" />
 </center>
