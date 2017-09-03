@@ -6,7 +6,6 @@ date: 2017-06-18
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Dhaka_Savar_Building_Collapse.jpg" width="600 px" />
 </center>
  
-For my first [leaflet](https://rstudio.github.io/leaflet/) map, I visualized the locations of the world's worst industrial disasters since 2010. 
-See my work [here](http://rpubs.com/kafay/major_industrial_disasters).  
+For one of my Coursera data science courses, I learned about several data product platforms including Plotly and GoogleVis. I felt particularly drawn to [leaflet](https://rstudio.github.io/leaflet/), and created this map in a day. I visualized the locations of the world's worst industrial disasters since 2010 [here](http://rpubs.com/kafay/major_industrial_disasters).  
 
 
