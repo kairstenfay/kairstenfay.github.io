@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Global Winter Coat Color Observations Visualized"
+title: "Mapping the Winter Coat Colors of Camouflaging Critters"
 date: 2017-06-26
 ---
 <center><img src="https://c1.staticflickr.com/2/1581/24576551443_f082234f98_b.jpg" width="600 px" />
