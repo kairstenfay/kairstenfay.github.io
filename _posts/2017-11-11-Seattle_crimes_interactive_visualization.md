@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Closer View at Seattle Crimes"
+title: "A Closer View of Seattle Crimes"
 date: 2017-11-11
 ---
 <center><img src="http://maxpixel.freegreatpicture.com/static/photo/2x/City-Skyline-Seattle-Cityscape-Urban-Washington-870282.jpg" width="600 px" />

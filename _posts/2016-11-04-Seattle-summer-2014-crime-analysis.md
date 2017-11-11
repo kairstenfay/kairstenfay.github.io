@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Seattle summer 2014 crime analysis"
+title: "Seattle Summer 2014 Crime Analysis"
 date: 2016-11-04
 ---
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Police_Line_Crime_Scene_2498847226.jpg" alt="Source: Wikimedia Commons" width="600px" />
