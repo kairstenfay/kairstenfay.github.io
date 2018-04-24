@@ -24,7 +24,6 @@ Here is some text.
 
 <div id='d3div'></div>
 And some more text.  
-Thank you, @dkmehrmann, for your extremely helpful [blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html  
   
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
@@ -126,3 +125,5 @@ Thank you, @dkmehrmann, for your extremely helpful [blog post](http://dkmehrmann
 
 
 </script>
+Thank you, @dkmehrmann, for your extremely helpful [blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html
+
