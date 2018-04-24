@@ -19,11 +19,10 @@ date: 2018-04-23
             }
 
 </style>
-Here is some text.  
-  
+For my "Hello, World!" into the beautiful and mysterious graphing library, D3, of JavaScript, I created a scatter plot using a tutorial in <u>Interactive Data Visualization for the Web</u> by Scott Murray.  
 
 <div id='d3div'></div>
-And some more text.  
+Stay tuned, as there will be plenty more to come!  
   
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
@@ -125,5 +124,5 @@ And some more text.
 
 
 </script>
-Thank you, @dkmehrmann, for your extremely helpful 
-[blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html)
+Thank you, [@dkmehrmann](http://github.com/dkmehrmann), for your extremely helpful 
+[blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html) that helped me render D3 in Github Pages.
