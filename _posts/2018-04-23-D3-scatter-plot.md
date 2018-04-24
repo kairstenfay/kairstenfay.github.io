@@ -3,17 +3,10 @@ layout: post
 title: "My first D3 Graph"
 date: 2018-04-23
 ---
-<script src="//code.jquery.com/jquery.js"></script> <style> .node { stroke: #fff; stroke-width: 1.5px; } .link { stroke: #999; stroke-opacity: .6; } </style>
 
-<html lang="en"> 
-	<head>
-		<meta charset="utf-8">
-		<title>D3 Page Template</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<style></style>
 		<style type = "text/css">
 
-		
 			div.bar {
 				display: inline-block;
 				width: 20px;
@@ -35,11 +28,9 @@ date: 2018-04-23
 			}
 		
 		</style>
-	</head>
     <div id='d3div'>
 
 		<script type="text/javascript">
-
 
 					// Dynamic, random data set 
 					var dataset = [];
