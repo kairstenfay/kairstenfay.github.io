@@ -1,3 +1,9 @@
+---
+layout: post
+title: "My first D3 Graph"
+date: 2018-04-23
+---
+
 <html lang="en"> 
 	<head>
 		<meta charset="utf-8">
