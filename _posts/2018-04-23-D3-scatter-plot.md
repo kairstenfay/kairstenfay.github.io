@@ -19,11 +19,15 @@ date: 2018-04-23
             }
 
 </style>
+Here is some text.  
+  
 
-    <div id='d3div'></div>
+<div id='d3div'></div>
+And some more text.  
+  
 
-		<script src="//d3js.org/d3.v3.min.js"></script>
-        <script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
 
 					// Dynamic, random data set 
 					var dataset = [];
@@ -121,4 +125,4 @@ date: 2018-04-23
 						.call(yAxis);
 
 
-				</script>
+</script>
