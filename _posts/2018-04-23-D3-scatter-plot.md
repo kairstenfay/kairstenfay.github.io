@@ -125,5 +125,5 @@ And some more text.
 
 
 </script>
-Thank you, @dkmehrmann, for your extremely helpful [blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html
-
+Thank you, @dkmehrmann, for your extremely helpful 
+[blog post](http://dkmehrmann.github.io/blog/2016/05/01/d3.html)
