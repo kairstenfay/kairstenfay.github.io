@@ -3,34 +3,27 @@ layout: post
 title: "My first D3 Graph"
 date: 2018-04-23
 ---
+<script src="//code.jquery.com/jquery.js"></script>
+<style>
 
-		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<style type = "text/css">
+            .axis path,
+            .axis line {
+                fill : none;  /* when we use CSS to style SVG elements, we should only use SVG attribute names,*/
+                stroke: black; /* not regular CSS properties */
+                shape-rendering: crispEdges;
+            }
 
-			div.bar {
-				display: inline-block;
-				width: 20px;
-				height: 75px;
-				background-color: teal;
-				margin-right: 2px;
-			}
+            .axis text {
+                font-family: sans-serif;
+                font-size: 11px;
+            }
 
-			.axis path,
-			.axis line { 
-				fill : none;  /* when we use CSS to style SVG elements, we should only use SVG attribute names,*/
-				stroke: black; /* not regular CSS properties */
-				shape-rendering: crispEdges;
-			}
+</style>
 
-			.axis text { 
-				font-family: sans-serif;
-				font-size: 11px;
-			}
-		
-		</style>
-    <div id='d3div'>
+    <div id='d3div'></div>
 
-		<script type="text/javascript">
+		<script src="//d3js.org/d3.v3.min.js"></script>
+        <script>
 
 					// Dynamic, random data set 
 					var dataset = [];
@@ -128,6 +121,4 @@ date: 2018-04-23
 						.call(yAxis);
 
 
-                </div>
 				</script>
-</html>
