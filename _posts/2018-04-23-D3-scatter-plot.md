@@ -35,7 +35,7 @@ date: 2018-04-23
 		
 		</style>
 	</head>
-	<body>
+	<body bgcolor="#FFF">
 
 		<script type="text/javascript">
 
