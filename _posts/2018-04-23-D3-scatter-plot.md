@@ -47,7 +47,7 @@ And some more text.
 					})
 
 					var padding = 30; // keeps labels from being cut off 
-					var w = 600;
+					var w = $("#d3div").width();
 					var h = 400;
 
 					// setting up dynamic scales
