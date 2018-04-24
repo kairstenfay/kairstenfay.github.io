@@ -72,7 +72,7 @@ date: 2018-04-23
 									  .ticks(5);
 
 					// incorporating scaled values 
-					var svg = d3.select("body")
+					var svg = d3.select("#d3div")
 					            .append("svg")
 					            .attr("width", w)
 					            .attr("height", h);
