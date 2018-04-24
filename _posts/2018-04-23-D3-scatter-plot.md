@@ -3,6 +3,7 @@ layout: post
 title: "My first D3 Graph"
 date: 2018-04-23
 ---
+<script src="//code.jquery.com/jquery.js"></script> <style> .node { stroke: #fff; stroke-width: 1.5px; } .link { stroke: #999; stroke-opacity: .6; } </style>
 
 <html lang="en"> 
 	<head>
@@ -35,7 +36,7 @@ date: 2018-04-23
 		
 		</style>
 	</head>
-	<body bgcolor="#FFFFFF">
+    <div id='d3div'>
 
 		<script type="text/javascript">
 
@@ -136,7 +137,6 @@ date: 2018-04-23
 						.call(yAxis);
 
 
-
+                </div>
 				</script>
-	</body>
 </html>
