@@ -21,7 +21,7 @@ date: 2018-04-23
 </style>
 For my "Hello, World!" into the beautiful and mysterious graphing library, D3, of JavaScript, I created a scatter plot using a tutorial in <u>Interactive Data Visualization for the Web</u> by Scott Murray.  
 
-<p class="button" style="color:red;">Click on this text to update the plot with new random values.</p> 
+<p class="button" style="color:magenta;">Click on this text to update the plot with new random values.</p> 
 
 <div id="d3div"></div>
 Stay tuned, as there will be plenty more to come!  
@@ -51,7 +51,6 @@ Stay tuned, as there will be plenty more to come!
                     if (w < 400) { 
                         w = 400;
                     }
-
 					var h = 400;
 
 					// setting up dynamic scales
@@ -85,7 +84,19 @@ Stay tuned, as there will be plenty more to come!
 					            .attr("width", w)
 					            .attr("height", h);
 
-					svg.selectAll("circle")
+					// define clipping path 
+					svg.append("clipPath")
+						.attr("id", "chart-area")
+						.append("rect")
+						.attr("x", padding)
+						.attr("y", padding)
+						.attr("width", w - padding * 3)
+						.attr("height", h - padding * 2);
+
+					svg.append("g") 	// create a new g
+						.attr("id", "circles") // Assign ID of 'circles'
+						.attr("clip-path", "url(#chart-area)") // add reference to clipPath
+						.selectAll("circle")
 					    .data(dataset)
 					    .enter()
 					    .append("circle")
@@ -128,6 +139,7 @@ Stay tuned, as there will be plenty more to come!
 						.attr("transform", "translate(" + padding + ",0)")
 						.call(yAxis);
 
+
 					// refresh data on click 
 					d3.select('.button')
 						.on("click", function() { 
@@ -145,6 +157,7 @@ Stay tuned, as there will be plenty more to come!
 							// Update scale domain
 							xScale.domain([0, d3.max(dataset, function(d) { return d[0];})]);
 							yScale.domain([0, d3.max(dataset, function(d) { return d[1];})]);
+							rScale.domain([0, d3.max(dataset, function(d) { return d[1];})]);
 
 							// update all circles 
 							svg.selectAll("circle")
@@ -152,6 +165,13 @@ Stay tuned, as there will be plenty more to come!
 								.transition() // animation!
                                 .delay(100)
                                 .duration(1000)
+                                .each("start", function() { 
+                                	d3.select(this)
+                                		.attr("fill", "magenta")
+                                		.attr("r", function(d) { 
+							    				return rScale(d[1]);
+							    		})
+                                })
                                 // .ease("elastic")
 							    .attr("cx", function(d) {
 							        			return xScale(d[0]);
@@ -159,22 +179,23 @@ Stay tuned, as there will be plenty more to come!
 							    .attr("cy", function(d) {
 							        			return yScale(d[1]);
 							    })
-							    .attr("r", function(d) { 
-							   					return rScale(d[1]);
-								});
+							    .transition()
+							    .duration(1000)
+							    .attr("fill", "black")
+							    .attr("r", 2);
+							    
 
 							// update x axis
 							svg.select(".x.axis")
 								.transition()
 								.duration(1000)
-								.call(xAxis)
+								.call(xAxis);
 
 							// update y axis
 							svg.select(".y.axis")
 								.transition()
 								.duration(1000)
 								.call(yAxis);
-
 
 						});
 
