@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My first D3 Graph"
+title: "Interactive Scatter Plot (D3)"
 date: 2018-04-23
 ---
 <script src="//code.jquery.com/jquery.js"></script>
@@ -21,7 +21,9 @@ date: 2018-04-23
 </style>
 For my "Hello, World!" into the beautiful and mysterious graphing library, D3, of JavaScript, I created a scatter plot using a tutorial in <u>Interactive Data Visualization for the Web</u> by Scott Murray.  
 
-<div id='d3div'></div>
+<p class="button" style="color:red;">Click on this text to update the plot with new random values.</p> 
+
+<div id="d3div"></div>
 Stay tuned, as there will be plenty more to come!  
   
 <script src="//d3js.org/d3.v3.min.js"></script>
@@ -113,14 +115,66 @@ Stay tuned, as there will be plenty more to come!
 					// put this code at the end of the script so that it's generated after
 					// the other elements and goes 'on top'
 					svg.append("g")
-						.attr("class", "axis") // Assign "axis" class
+						.attr("class", "x axis") // Assign "axis" class
 						.attr("transform", "translate(0," + (h - padding) + ")") // put the axis on the bottom
 						.call(xAxis); // see CSS styles in the <head> of our page 
 
 					svg.append("g")
-						.attr("class","axis")
+						.attr("class", "y axis")
 						.attr("transform", "translate(" + padding + ",0)")
 						.call(yAxis);
+
+					// refresh data on click 
+					d3.select('.button')
+						.on("click", function() { 
+							// Do something on click
+							var dataset = [];
+							var numDataPoints = 50;
+							var xRange = Math.random() * 1000;
+							var yRange = Math.random() * 1000;
+							for (var i = 0; i < numDataPoints; i++) { 
+								var newNumber1 = Math.floor(Math.random() * xRange);
+								var newNumber2 = Math.floor(Math.random() * yRange);
+								dataset.push([newNumber1, newNumber2]);
+							}
+							
+							// Update scale domain
+							xScale.domain([0, d3.max(dataset, function(d) { return d[0];})]);
+							yScale.domain([0, d3.max(dataset, function(d) { return d[1];})]);
+
+							// update all circles 
+							svg.selectAll("circle")
+								.data(dataset)
+								.transition() // animation!
+                                .delay(100)
+                                .duration(1000)
+                                // .ease("elastic")
+							    .attr("cx", function(d) {
+							        			return xScale(d[0]);
+							    })
+							    .attr("cy", function(d) {
+							        			return yScale(d[1]);
+							    })
+							    .attr("r", function(d) { 
+							   					return rScale(d[1]);
+								});
+
+							// update x axis
+							svg.select(".x.axis")
+								.transition()
+								.duration(1000)
+								.call(xAxis)
+
+							// update y axis
+							svg.select(".y.axis")
+								.transition()
+								.duration(1000)
+								.call(yAxis);
+
+
+						});
+
+
 
 
 </script>
