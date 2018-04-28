@@ -48,6 +48,10 @@ Stay tuned, as there will be plenty more to come!
 
 					var padding = 30; // keeps labels from being cut off 
 					var w = $("#d3div").width();
+                    if (w < 400) { 
+                        w = 400;
+                    }
+
 					var h = 400;
 
 					// setting up dynamic scales
