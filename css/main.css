@@ -54,3 +54,13 @@ img {
     max-width: ;
     max-height: ;
 }
+
+.jobs .img {
+    background: #eee;
+    border-top: 1px solid transparent;
+}
+
+.jobs .img:hover {
+    background: #e1e1e1;
+    border-top: 1px solid #d0d0d0;
+}
