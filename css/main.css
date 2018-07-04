@@ -1,6 +1,6 @@
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 80%;
     background-image: url("https://background-tiles.com/overview/white/patterns/large/1019.png");
     background-attachment: fixed;
 }
@@ -20,6 +20,7 @@ a {
 }
 a:hover {
     text-decoration: underline;
+
 }
 h1 {
     font-size: 3em;
@@ -47,7 +48,7 @@ ul.posts li {
 
 div {
     background-color: #fff;
-    padding: 50px;
+    padding: 30px;
 }
 
 img {
