@@ -50,11 +50,12 @@ div {
     padding: 50px;
 }
 
-img { 
-  border: 3px solid white; 
-  max-width: ;
-  max-height: ;
-} 
-img:hover { 
-  border: 3px solid black; 
-} 
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
