@@ -50,11 +50,11 @@ div {
     padding: 50px;
 }
 
-img {
-    max-width: ;
-    max-height: ;
-}
-
-a:hover{
- border:10px solid black;  
-}
+img { 
+  border: 3px solid white; 
+  max-width: ;
+  max-height: ;
+} 
+img:hover { 
+  border: 3px solid black; 
+} 
