@@ -4,6 +4,18 @@ body {
     background-image: url("https://background-tiles.com/overview/white/patterns/large/1019.png");
     background-attachment: fixed;
 }
+
+div {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.cv {
+    padding: 90px;
+    width: 80%;
+    line-height: 1.0em;
+}
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -27,13 +39,24 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color:;
 }
+h2 {
+    font-size: 1.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color:;
+}
+h3 {
+    font-size: 1em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color:;
+}
 p {
     font-size: 1.0em;
     line-height: 1.2em;
     color: #333;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 footer {
-    border-top: 1px solid #333;
+    border-top: 1px solid #999;
     font-size: .8em;
     float: right;
 }
@@ -45,19 +68,25 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-div {
-    background-color: #fff;
-    padding: 30px;
-}
 
 img {
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
-img:hover {
+img.link:hover {
     opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/*img:hover {*/
+    /*opacity: 0.5;*/
+    /*filter: alpha(opacity=50); !* For IE8 and earlier *!*/
+/*}*/
+
+li{
+    margin: 10px 0;
 }
