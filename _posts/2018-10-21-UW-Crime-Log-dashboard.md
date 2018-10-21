@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing seafarer - an additional layer of abstraction for creating themed plots in python"
+title: "UW Crime Log -- making UWPD data more accessible"
 date: 2018-10-21
 ---
 <center>
