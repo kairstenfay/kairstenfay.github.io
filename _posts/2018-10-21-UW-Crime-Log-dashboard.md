@@ -25,3 +25,4 @@ scraped the data from a PDF into a json file using Python's tabula-py library.
 From there, we geocoded the address data using Google's geocoding API. We used
 JavaScript to map the data and create the histogram and donut charts. Please
 view the product at our temporary location [here](https://baddawgs.andrey.ninja). 
+  
