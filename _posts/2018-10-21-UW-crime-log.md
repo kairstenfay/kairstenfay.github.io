@@ -4,7 +4,8 @@ title: "UW Crime Log - making UWPD data more accessible"
 date: 2018-10-21
 ---
 <center>
-	<a href="https://baddawgs.andrey.ninja"><img src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/baddawgs-home.png?raw=true" 
+	<a href="https://baddawgs.andrey.ninja">
+	<img class="link" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/baddawgs-home.png?raw=true" 
           width="600 px" /></a>
       </center>
 

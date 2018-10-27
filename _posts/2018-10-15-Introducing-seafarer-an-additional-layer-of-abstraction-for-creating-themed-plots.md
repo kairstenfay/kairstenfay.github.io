@@ -4,8 +4,11 @@ title: "Introducing seafarer - an additional layer of abstraction for creating t
 date: 2018-10-15
 ---
 <center>
-<img src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/swarmboxplot-example.png?raw=true" 
+<a href="https://github.com/kairstenfay/seafarer">
+<img class="link" 
+src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/swarmboxplot-example.png?raw=true" 
           width="600 px" />
+</a>
 </center>
 
 This weekend, I developed my first open source library. 
