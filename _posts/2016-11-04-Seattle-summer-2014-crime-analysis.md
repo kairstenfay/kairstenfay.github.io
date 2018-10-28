@@ -3,8 +3,7 @@ layout: post
 title: "Seattle Summer 2014 Crime Analysis"
 date: 2016-11-04
 ---
-<center><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Police_Line_Crime_Scene_2498847226.jpg" alt="Source: Wikimedia Commons" width="600px" />
-</center>
+<img class="post" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Police_Line_Crime_Scene_2498847226.jpg" alt="Source: Wikimedia Commons">
   
 Here, I completed an analysis of the crimes that occurred in Seattle during the
 summer of 2014. Analysis question included: Which are the most common crimes? What hour of

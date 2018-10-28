@@ -3,11 +3,9 @@ layout: post
 title: "New publication: Lancet Planetary Health"
 date: 2018-08-03
 ---
-<center><a href="http://nutrition.healthdata.org/global-nutrient-database">
-<img class="link" 
-src="https://pbs.twimg.com/media/DjteCGRWsAELPvN.jpg" width="600 px" />
+<a href="http://nutrition.healthdata.org/global-nutrient-database">
+<img class="link post" src="https://pbs.twimg.com/media/DjteCGRWsAELPvN.jpg"/>
 </a>
-</center>
  
 In a joint effort with the UN FAO, the nutrition team at IHME recently published 
 an article on the global availability of micro- and macronutrients from 1980 to 

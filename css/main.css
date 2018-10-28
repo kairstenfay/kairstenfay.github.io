@@ -27,10 +27,11 @@ div {
 }
 
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family:"Courier";
     padding: 0;
     list-style: none;
     font-weight: bold;
+    text-align: center;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -38,21 +39,25 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: cornflowerblue;
+    font-family: "Courier";
 }
 a:hover {
     text-decoration: underline;
-
 }
+
+a.nav {
+    color: black;
+}
+
 h1 {
     font-size: 3em;
-    font-family:'brandon-grotesque';
-    color:;
+    font-family:"Courier";
     text-align: center;
 }
 h2 {
     font-size: 1.5em;
-    font-family:'brandon-grotesque';
+    font-family:"Courier";
     color:;
     text-align: center;
 }
@@ -63,13 +68,14 @@ h2 {
 
 h3 {
     font-size: 1em;
-    font-family:"Lucida Console", Monaco, monospace;
+    font-family:system-ui;
+    font-family:"Courier";
 }
 p {
     font-size: 1.0em;
     line-height: 1.2em;
     color: #333;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family:system-ui;
 }
 
 .meta {
@@ -79,7 +85,8 @@ p {
 footer {
     border-top: 1px solid #999;
     font-size: .8em;
-    float: right;
+    float: none;
+    font-family:"Courier";
 }
 
 ul.posts { 
@@ -89,7 +96,7 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family: system-ui;
 }
 
 
@@ -110,6 +117,14 @@ img.link:hover {
 img.cell {
     width: 175px;
     height: 175px;
+}
+
+img.post{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    padding: 0 0 0 0;
 }
 
 li{

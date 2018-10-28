@@ -3,13 +3,11 @@ layout: post
 title: "Introducing seafarer - an additional layer of abstraction for creating themed plots in python"
 date: 2018-10-15
 ---
-<center>
 <a href="https://github.com/kairstenfay/seafarer">
-<img class="link" 
+<img class="link post" 
 src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/swarmboxplot-example.png?raw=true" 
-          width="600 px" />
+/>
 </a>
-</center>
 
 This weekend, I developed my first open source library. 
 It's still in its early stages of development, but here's the gist of it:

@@ -3,11 +3,9 @@ layout: post
 title: "UW Crime Log - making UWPD data more accessible"
 date: 2018-10-21
 ---
-<center>
-	<a href="https://baddawgs.andrey.ninja">
-	<img class="link" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/baddawgs-home.png?raw=true" 
-          width="600 px" /></a>
-      </center>
+<a href="https://baddawgs.andrey.ninja">
+<img class="link post" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/baddawgs-home.png?raw=true" 
+/></a>
 
 Those of you who know me may know that earlier this year, I participated in a
 Amazon Catalyst/UW CoMotion competition and pitched an idea to the board. I made
