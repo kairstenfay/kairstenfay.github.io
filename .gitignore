@@ -4,4 +4,4 @@ _site/
 *.pyc
 *.class
 *.DS_Store
-
+*.idea
