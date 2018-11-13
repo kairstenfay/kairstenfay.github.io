@@ -4,6 +4,7 @@ body {
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm1eFGDIyTTZ_NfLvem8ul2p1ixrYWN1nbkjy0H845im1rMAbyyQ");
     background-attachment: fixed; */
     background-color: ghostwhite;
+    font-family: 'Indie Flower', monospace;
 }
 
 div {
@@ -11,7 +12,7 @@ div {
     padding: 10px;
 }
 
-.cv {
+#cv {
     padding: 90px;
     width: 80%;
     line-height: 1.0em;
@@ -27,7 +28,6 @@ div {
 }
 
 nav ul, footer ul {
-    font-family:"Courier";
     padding: 0;
     list-style: none;
     font-weight: bold;
@@ -37,29 +37,29 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+
 a {
     text-decoration: none;
     color: cornflowerblue;
-    font-family: "Courier";
+    font-family: 'Indie Flower', monospace;
+    font-size: 1.1em;
+    font-weight: 700;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
 a.nav {
     color: black;
+    font-weight: 900;
 }
 
 h1 {
-    font-size: 3em;
-    font-family:"Courier";
-    text-align: center;
+    font-size: 3.2em;
 }
 h2 {
-    font-size: 1.5em;
-    font-family:"Courier";
-    color:;
-    text-align: center;
+    font-size: 1.7em;
 }
 .blog {
     text-align: left;
@@ -67,15 +67,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
-    font-family:system-ui;
-    font-family:"Courier";
+    font-size: 1.1em;
 }
+
 p {
     font-size: 1.0em;
     line-height: 1.2em;
     color: #333;
-    font-family:system-ui;
+    font-family: system-ui, sans-serif;
+}
+
+.title {
+    text-align: center;
 }
 
 .meta {
@@ -84,9 +87,8 @@ p {
 
 footer {
     border-top: 1px solid #999;
-    font-size: .8em;
+    font-size: .9em;
     float: none;
-    font-family:"Courier";
 }
 
 ul.posts { 
@@ -96,7 +98,7 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
-    font-family: system-ui;
+    font-family: system-ui, sans-serif;
 }
 
 
@@ -129,4 +131,9 @@ img.post{
 
 li{
     margin: 10px 0;
+    font-family: system-ui, sans-serif;
+}
+
+#thumbnail {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
