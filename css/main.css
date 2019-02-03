@@ -4,12 +4,14 @@ body {
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm1eFGDIyTTZ_NfLvem8ul2p1ixrYWN1nbkjy0H845im1rMAbyyQ");
     background-attachment: fixed; */
     font-family: 'PT Sans', sans-serif;
-    display: flex;
 }
 nav {
     background-color: #000;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    width: 20vw;
+    height: 100vh;
 }
 
 div {
@@ -79,6 +81,7 @@ h1 {
 }
 h2 {
     font-size: 1.3em;
+    align-self: center;
 }
 .blog {
     text-align: left;
@@ -160,5 +163,7 @@ li{
 
 #thumbnail {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23);
-    background-color: ghostwhite;
+    position: relative;
+    left: 20vw;
+    width: 80vw;
 }
