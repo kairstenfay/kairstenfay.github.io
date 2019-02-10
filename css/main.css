@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    width: 100%;
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm1eFGDIyTTZ_NfLvem8ul2p1ixrYWN1nbkjy0H845im1rMAbyyQ");
     background-attachment: fixed; */
     font-family: 'PT Sans', sans-serif;
@@ -16,7 +15,7 @@ nav {
 
 div {
     background-color: ghostwhite;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 #cv {
