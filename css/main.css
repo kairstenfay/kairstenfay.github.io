@@ -3,6 +3,7 @@ body {
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm1eFGDIyTTZ_NfLvem8ul2p1ixrYWN1nbkjy0H845im1rMAbyyQ");
     background-attachment: fixed; */
     font-family: 'PT Sans', sans-serif;
+    background-color: ghostwhite;
 }
 nav {
     background-color: #000;
@@ -14,7 +15,6 @@ nav {
 }
 
 div {
-    background-color: ghostwhite;
     padding: 10px 0;
 }
 
@@ -25,7 +25,7 @@ div {
 }
 
 .blurb {
-    padding: 30px;
+    padding: 0 30px 30px 30px;
 }
 
 .post {
@@ -48,21 +48,19 @@ a {
     text-decoration: none;
     color: black;
     font-family: 'PT Sans', sans-serif;
-    font-size: 1.1em;
     font-weight: 700;
     position: relative;
 }
 
 a.post-title {
     font-family: system-ui, sans-serif;
-    font-weight: 400;
 }
 
 a:hover {
     /* color: #d1d7e8; */
     /*text-shadow: 1px 1px 1px #d1d7e8;*/
     position: relative;
-    left: 2px;
+    bottom: 2px;
 }
 
 a.nav {
@@ -75,24 +73,68 @@ a.nav:hover {
     /* text-shadow: 2px 2px 5px #d1d7e8; */
 }
 
-h1 {
-    font-size: 3.2em;
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3.2em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.1em;
+    }
+
+    p {
+        font-size: 1.0em;
+    }
+
+    li.posts {
+        font-size: 1.0em;
+    }
+
+    a {
+        font-size: 1.1em;
+    }
 }
-h2 {
-    font-size: 1.3em;
-    align-self: center;
+
+@media only screen and (max-width: 767px) {
+    #thumbnail {
+        font-size: .7em;
+    }
+
+    a {
+        font-size: .7em;
+    }
+    /*h1 {*/
+        /*font-size: 3.2em;*/
+    /*}*/
+    /*h2 {*/
+        /*font-size: 1.3em;*/
+    /*}*/
+    /*h3 {*/
+        /*font-size: 1.1em;*/
+    /*}*/
+
+    /*p {*/
+        /*font-size: 1.0em;*/
+    /*}*/
+
+    /*.posts li {*/
+        /*font-size: .3em;*/
+    /*}*/
+
+    /*a {*/
+        /*font-size: .3em;*/
+    /*}*/
 }
+
+
 .blog {
     text-align: left;
     padding: 0 0 0 60px;
 }
 
-h3 {
-    font-size: 1.1em;
-}
-
 p {
-    font-size: 1.0em;
     line-height: 1.2em;
     color: #333;
     font-family: system-ui, sans-serif;
@@ -116,7 +158,6 @@ footer {
 
 ul.posts { 
     margin: 20px auto 40px; 
-    font-size: 1.0em;
 }
 
 ul.posts li {
@@ -151,8 +192,8 @@ img.post{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 80%;
     padding: 0 0 0 0;
+    max-width: 300px;
 }
 
 li{
@@ -161,8 +202,18 @@ li{
 }
 
 #thumbnail {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23);
     position: relative;
     left: 20vw;
     width: 80vw;
+}
+
+.me {
+    max-width: 300px;
+    height: auto;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
