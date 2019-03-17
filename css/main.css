@@ -52,6 +52,12 @@ a.nav:hover {
     /* text-shadow: 2px 2px 5px #d1d7e8; */
 }
 
+fieldset {
+    width: 80%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
 p {
     line-height: 1.2em;
     color: #333;
@@ -91,6 +97,7 @@ img.link:hover {
 img.cell {
     width: 175px;
     height: 175px;
+    margin: 10px;
 }
 
 img.post{
@@ -126,7 +133,9 @@ img.post{
 .table {
     display: table;
     align-self: center;
-    width:100%
+    width: 100%;
+    /*border-spacing: 2em;*/
+    /*border-collapse: separate;*/
 }
 
 #cv {
@@ -142,6 +151,13 @@ img.post{
 .post {
     padding: 0 0 0 60px;
     margin-top: 0;
+}
+
+#portfolio {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
