@@ -1,16 +1,11 @@
 body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
-    background-color: ghostwhite;
+    background-color: rgba(216, 216, 216, 0.637);
 }
 
 nav {
-    background-color: ghostwhite;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 50px;
-    height: 100vh;
+    background-color: rgb(51, 51, 51);
 }
 
 nav ul {
@@ -19,10 +14,80 @@ nav ul {
     display: flex;
     flex-direction: column;
 }
+
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    padding: 1vh;
 }
+
+a.nav {
+    color: white;
+    font-weight: 600;
+}
+
+#page {
+    display: flex;
+}
+
+#me {
+    border-radius: 50%;
+    width: 150px;
+    margin: 2vh;
+}
+
+
+/* Phones only */
+@media (max-width: 599px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    #page {
+        flex-direction: column;
+    }
+
+    #me {
+        display: None;
+    }
+}
+
+/* Tablet portrait */
+@media (min-width: 600px) {
+}
+
+/* Tablet landscape */
+@media (min-width: 900px) {
+    h1 {
+        font-size: 3.2em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.1em;
+    }
+
+    p {
+        font-size: 1.0em;
+    }
+
+    li.posts {
+        font-size: 1.0em;
+    }
+
+    a {
+        font-size: 1.1em;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+}
+
+/* Big desktop */
+@media (min-width: 1800px) {
+}
+
+
 
 a {
     text-decoration: none;
@@ -38,11 +103,6 @@ a:hover {
 
 a.post-title {
     font-family: system-ui, sans-serif;
-}
-
-a.nav {
-    font-weight: 900;
-    position: relative;
 }
 
 fieldset {
@@ -62,14 +122,6 @@ li {
     margin: 10px 0;
     font-family: system-ui, sans-serif;
 }
-
-img {
-    max-width:100%;
-    max-height:100%;
-    padding: 0;
-    float: none;
-}
-
 
 img.cell {
     width: 175px;
@@ -93,19 +145,6 @@ img.post{
     width: 80%;
     margin: 0 auto;
     text-align: center;
-}
-
-#me {
-    max-width: 300px;
-    height: auto;
-    margin: auto;
-    padding: 10px;
-}
-
-#about fieldset {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
 }
 
 .table {
@@ -144,35 +183,6 @@ img.post{
 
 footer {
     text-align: center;
-}
-
-
-
-@media only screen and (min-width: 768px) {
-    h1 {
-        font-size: 3.2em;
-    }
-    h2 {
-        font-size: 1.3em;
-    }
-    h3 {
-        font-size: 1.1em;
-    }
-
-    p {
-        font-size: 1.0em;
-    }
-
-    li.posts {
-        font-size: 1.0em;
-    }
-
-    a {
-        font-size: 1.1em;
-    }
-}
-
-@media only screen and (max-width: 767px) {
 }
 
 
