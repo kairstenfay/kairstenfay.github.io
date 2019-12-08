@@ -38,6 +38,7 @@ footer img {
     border-radius: 50%;
     width: 150px;
     margin: 2vh;
+    border: 5px outset white;
 }
 
 
