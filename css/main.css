@@ -109,6 +109,9 @@ footer img:hover {
 
 /* Tablet portrait */
 @media (min-width: 600px) {
+    #thumbnail {
+        width: 80%;
+    }
 }
 
 /* Custom */
@@ -212,7 +215,6 @@ img.post{
 }
 
 #thumbnail {
-    width: 80%;
     margin: 0 auto;
     padding: 5px;
 }
