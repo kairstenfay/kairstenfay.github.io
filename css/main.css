@@ -40,6 +40,14 @@ footer img:hover {
     opacity: 30%;
 }
 
+td {
+    padding: 3px;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #f4f4f4;
+}
+
 .text-based {
     background-color: white;
     border: 1px solid lightgrey;
