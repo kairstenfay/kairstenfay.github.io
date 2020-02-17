@@ -233,13 +233,6 @@ img.post{
     width: 100%;
 }
 
-#cv {
-    padding: 90px;
-    width: 80%;
-    line-height: 1.0em;
-    display: block !important;
-}
-
 .blurb {
     margin: 0 auto;
     display: flex;
