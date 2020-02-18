@@ -3,5 +3,5 @@ _site/
 *.txt
 *.pyc
 *.class
-*.DS_Store
+.DS_Store
 *.idea
