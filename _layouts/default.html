@@ -3,54 +3,21 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127100738-1"></script>
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-  gtag('config', 'UA-127100738-1');
+	gtag('config', 'UA-127100738-1');
 </script>
 
-    <html>
-        <head>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-		<div id="page">
-			<div id="sidebar">
-				<h1>Kairsten Fay</h1>
-				<img id="me" src="../images/me.jpg" />
-				<nav>
-					<ul>
-						<li><a class="nav" href="/">Home</a></li>
-						<li><a class="nav" href="/about">About</a></li>
-						<li><a class="nav" href="/cv">CV</a></li>
-						<li><a class="nav" href="/blog">Blog</a></li>
-						<li><a class="nav" href="mailto:kairsten.fay@gmail.com">email</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<a href="http://github.com/kairstenfay">
-						<img src="../images/icons/github.png" alt="github" />
-					</a>
-					<a href="http://twitter.com/databae_" alt="twitter">
-						<img src="../images/icons/twitter.png" />
-					</a>
-					<a href="http://patreon.com/kairstenfay" alt="patreon">
-						<img src="../images/icons/patreon.png" />
-					</a>
-					<a href="http://linkedin.com/in/kairsten-fay" alt="linkedin">
-						<img src="../images/icons/linkedin.png" />
-					</a>
-				</footer>
-			</div>
-			<div id="thumbnail">
-
-			{{ content }}
-
-			</div>
-		</div>
-		</body>
-	</html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+	<body>
+		{{ content }}
+	</body>
+</html>
