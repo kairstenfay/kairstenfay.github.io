@@ -5,3 +5,4 @@ _site/
 *.class
 .DS_Store
 *.idea
+.jekyll-cache/
