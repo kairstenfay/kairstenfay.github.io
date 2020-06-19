@@ -11,4 +11,4 @@ discussing Java's graphics abilities (who knew they existed!?), and this is the 
 As we were prohibited from using advanced material, I am particularly proud of how I made the phone icon. It's composed
 of two rectangles and two ovals!
 
-<img class="post" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/images/dial_pad.png?raw=true"/>
+<img class="post" src="../../../images/dial_pad.png"/>

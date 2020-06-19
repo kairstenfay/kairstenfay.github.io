@@ -4,7 +4,7 @@ title: "r/dataisbeautiful October Data Battle"
 date: 2018-10-25
 ---
 <a href="https://github.com/kairstenfay/data-viz/blob/master/r-travel-data-battle.ipynb">
-<img class="link post" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/images/posts/r-travel-data-battle.png?raw=true"/>
+<img class="link post" src="../../../images/r-travel-data-battle.png?raw=true"/>
 </a>
 <br>
 I recently decided to try my hand at data viz competitions. I realized that one of my biggest challenges in managing

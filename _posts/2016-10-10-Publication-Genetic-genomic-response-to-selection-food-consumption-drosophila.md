@@ -12,6 +12,4 @@ for Food Consumption in *Drosophila melanogaster*".
 
 If you're interested, read more medical writing work by the first author, [Dr. Megan Garlapow.](https://megangarlapow.com/home/writing_samples/)
 
-<img class="post" src="https://github.com/kairstenfay/kairstenfay.github.io/blob/master/_posts/Publications/Fay-Genetics-lab-NCSU-twitter.jpg?raw=true">
-
-
+<img class="post" src="../../../images/Fay-Genetics-lab-NCSU-twitter.jpg">
