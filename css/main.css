@@ -166,6 +166,7 @@ a {
     color: black;
     font-family: 'PT Sans', sans-serif;
     position: relative;
+    font-weight: bold;
 }
 
 a.post-title {
