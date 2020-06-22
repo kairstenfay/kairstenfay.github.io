@@ -3,17 +3,15 @@ body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
     background-color: #f4f4f4;
+    display: grid;
+    place-items: center;
 }
 
 h1, h2 {
     font-family: 'Noto Sans SC', sans-serif;
     font-weight: 200;
-    text-align: center;
 }
 
-h2 {
-    margin-bottom: 0;
-}
 
 nav ul {
     list-style: none;
@@ -221,6 +219,22 @@ img.post{
     margin-right: auto;
     padding: 0 0 0 0;
     max-width: 300px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+}
+
+header a {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    top: 0;
 }
 
 #thumbnail {
