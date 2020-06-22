@@ -51,10 +51,6 @@ tbody tr:nth-child(odd){
     border: 5px outset white;
 }
 
-#talks {
-    padding: 25px;
-}
-
 #projects {
     margin: 0 auto;
     display: grid;
@@ -242,8 +238,8 @@ header a:hover {
 
 #home {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 h2 {
@@ -268,11 +264,11 @@ h2:first-child {
 }
 
 h2:nth-child(2) {
-    background-color: #8383ff;
+    background-color: #0df7fe;
 }
 
 h2:nth-child(3) {
-    background-color: #0df7fe;
+    background-color: #8383ff;
 }
 
 h2:nth-child(4) {
