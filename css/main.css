@@ -2,30 +2,18 @@
 body {
     margin: 0;
     font-family: 'PT Sans', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #c3cfff;
     display: grid;
     place-items: center;
 }
 
-h1, h2 {
-    font-family: 'Noto Sans SC', sans-serif;
-    font-weight: 200;
-}
-
-
 nav ul {
     list-style: none;
-    font-weight: bold;
     display: inline;
 }
 
 nav ul li {
     padding: 1vh;
-}
-
-a.nav {
-    color: white;
-    font-weight: 600;
 }
 
 footer img {
@@ -177,7 +165,6 @@ a {
     text-decoration: none;
     color: black;
     font-family: 'PT Sans', sans-serif;
-    font-weight: 700;
     position: relative;
 }
 
@@ -223,6 +210,7 @@ header {
     width: 100%;
     position: relative;
     top: 20px;
+    padding-bottom: 50px;
 }
 
 header a {
@@ -232,21 +220,61 @@ header a {
     background-color: white;
     top: 0;
     font-size: 20px;
+    border: 5px outset black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 header a:first-child {
-    background-color: pink;
-    border: 5px outset black;
+    background-color: #dd72b8;
 }
 
 header a:nth-child(2) {
-    background-color: palegreen;
-    border: 5px outset black
+    background-color: #77d4dc;
 }
 
 header a:hover {
     color: grey;
     border: 5px inset black;
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+h2 {
+    border: 5px dashed black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 25px;
+    box-shadow: -15px 20px 5px #b5c2ef;
+}
+
+h2:first-child {
+    background-color: #ff7170;
+}
+
+h2:nth-child(2) {
+    background-color: #8383ff;
+}
+
+h2:nth-child(3) {
+    background-color: #0df7fe;
+}
+
+h2:nth-child(4) {
+    background-color: #fff681;
+}
+
+h2:nth-child(5) {
+    background-color: #dc787a;
+}
+
+h2:nth-child(6) {
+    background-color: #fca3ff;
 }
 
 #thumbnail {
