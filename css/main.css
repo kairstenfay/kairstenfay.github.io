@@ -181,10 +181,6 @@ a {
     position: relative;
 }
 
-a:hover {
-    color: rgb(255, 0, 157);
-}
-
 a.post-title {
     font-family: system-ui, sans-serif;
 }
@@ -225,7 +221,7 @@ header {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 20px;
 }
 
@@ -235,6 +231,22 @@ header a {
     padding: 5px;
     background-color: white;
     top: 0;
+    font-size: 20px;
+}
+
+header a:first-child {
+    background-color: pink;
+    border: 5px outset black;
+}
+
+header a:nth-child(2) {
+    background-color: palegreen;
+    border: 5px outset black
+}
+
+header a:hover {
+    color: grey;
+    border: 5px inset black;
 }
 
 #thumbnail {
