@@ -26,12 +26,19 @@ footer img:hover {
     opacity: 30%;
 }
 
-td {
-    padding: 3px;
+table {
+    align-self: center;
+    max-width: 100%;
+    background-color: none;
 }
 
-tbody tr:nth-child(odd){
-    background-color: #f4f4f4;
+td {
+    padding: 3px;
+    outline: 1px solid white;
+}
+
+th {
+    background-color: #77d4dc;
 }
 
 .text-based {
@@ -247,7 +254,7 @@ h2 {
     border-radius: 5px;
     padding: 5px;
     margin: 25px;
-    box-shadow: -15px 20px 5px #b5c2ef;
+    box-shadow: -15px 20px 2px #b5c2ef;
     text-align: center;
 }
 
@@ -286,12 +293,6 @@ h2:nth-child(6) {
 #thumbnail {
     margin: 0 auto;
     padding: 5px;
-}
-
-.table {
-    display: table;
-    align-self: center;
-    width: 100%;
 }
 
 .blurb {
