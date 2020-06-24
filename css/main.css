@@ -81,12 +81,6 @@ th {
 
 /* Phones only */
 @media (max-width: 599px) {
-    nav ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin: -40px 0 0 -40px;
-    }
-
     #page {
         flex-direction: column;
     }
