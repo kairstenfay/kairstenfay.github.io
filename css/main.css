@@ -136,6 +136,10 @@ th {
         font-size: 1.1em;
     }
 
+    td {
+        font-size: 1.1em;
+    }
+
     #projects {
         grid-template-columns: 1fr 1fr;
     }
