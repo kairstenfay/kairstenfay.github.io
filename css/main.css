@@ -58,13 +58,6 @@ th {
     background-color: #77d4dc;
 }
 
-.text-based {
-    background-color: white;
-    border: 1px solid lightgrey;
-    border-radius: 2px;
-}
-
-
 #page {
     display: flex;
 }
