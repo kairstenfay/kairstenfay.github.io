@@ -269,7 +269,7 @@ header a:hover {
     margin-bottom: 50px;
 }
 
-h2 {
+.retro-button {
     border: 5px dashed black;
     border-radius: 5px;
     padding: 5px;
@@ -278,35 +278,35 @@ h2 {
     text-align: center;
 }
 
-h2:hover:nth-child(odd) {
+.retro-button:hover:nth-child(odd) {
     border: 5px solid black;
 }
 
-h2:hover:nth-child(even) {
+.retro-button:hover:nth-child(even) {
     border: 5px dotted black;
 }
 
-h2:first-child {
+.retro-button:first-child {
     background-color: #ff7170;
 }
 
-h2:nth-child(2) {
+.retro-button:nth-child(2) {
     background-color: #0df7fe;
 }
 
-h2:nth-child(3) {
+.retro-button:nth-child(3) {
     background-color: #8383ff;
 }
 
-h2:nth-child(4) {
+.retro-button:nth-child(4) {
     background-color: #fff681;
 }
 
-h2:nth-child(5) {
+.retro-button:nth-child(5) {
     background-color: #dc787a;
 }
 
-h2:nth-child(6) {
+.retro-button:nth-child(6) {
     background-color: #fca3ff;
 }
 
