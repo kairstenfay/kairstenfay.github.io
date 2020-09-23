@@ -52,6 +52,7 @@ td {
     padding: 3px;
     outline: 1px solid white;
     font-size: 0.9em;
+    word-break: break-all;
 }
 
 th {
