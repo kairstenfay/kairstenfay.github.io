@@ -173,13 +173,6 @@ th {
     }
 }
 
-/* Custom */
-@media (min-width: 1250px) {
-    #projects {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
 /* Big desktop */
 @media (min-width: 1800px) {
 }
