@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Absolute path to our containing repo
-base="$(cd "$(dirname "$0")/.."; pwd)"
-
-for image in "$base"/images/*; do
-    mogrify -resize x250 "$image"
-done
