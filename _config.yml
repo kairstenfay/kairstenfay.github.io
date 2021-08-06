@@ -1,0 +1,8 @@
+name: Kairsten Fay, Data Scientist
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
+
+gems:
+  - jekyll-sitemap
+
+encoding: UTF-8  

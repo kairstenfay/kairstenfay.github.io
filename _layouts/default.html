@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127100738-1"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-127100738-1');
+</script>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ page.title }}</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/">home</a>
+				<a href="/contact">contact me</a>
+			</nav>
+		</header>
+		{{ content }}
+		<footer>
+			<a href="https://i.pinimg.com/originals/c7/11/20/c7112015fe8e15055b04e7f071e76b38.jpg"
+				target="_blank">
+				style inspiration
+			</a>
+		</footer>
+	</body>
+</html>

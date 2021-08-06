@@ -1,0 +1,390 @@
+---
+title: "Predicting Titanic Survival With Machine Learning in R"
+author: "Kairsten Fay"
+date: "11/19/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction  
+The [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic/) dataset is a widely known compettion among the data science community that has been hosted by [Kaggle](http://www.kaggle.com) since September 2012. As of 11/19/2016, there were 5,778 teams that had submitted answers to the competition. In this report, I will give a walkthrough of how I generated the test data I submitted that scored an accuracy of 82% and put me in the [top 3%](https://www.kaggle.com/c/titanic/leaderboard) of teams on Kaggle.  
+
+## Overview  
+In this exercise, I used a random forest algorithm to generate predictions on who would survive the famous 1912 sinking of the [RMS Titanic passenger liner](https://en.wikipedia.org/wiki/RMS_Titanic) given various attributes about the passenger such as their class (1st, 2nd, 3rd), sex, age, name, fellow travelers, and more. The data required some cleaning, and I performed feature engineering to create several variables that I used in the random forest algorithm, including predictions I generated on the sparse cabin data which improved my model's accuracy.  
+Before beginning, I downloaded the test and train datasets from Kaggle, which are found at <https://www.kaggle.com/c/titanic/>.  
+```{r}
+train_raw       <- read.csv("train.csv", na.strings="")
+test_raw        <- read.csv("test.csv", na.strings="")
+```
+
+### Pre-process data  
+After loading the data, I created a new column, `Survived` on the test data. Naturally, it lacks the survival information as part of the competition. I filled it with `NA` values. Then, I bound the test and train datasets and stored them in a new dataframe called `res_raw` and looked at its dimensions and its structure.  
+```{r}
+test_raw$Survived <- NA
+res_raw <- rbind(train_raw, test_raw)
+dim(res_raw)
+str(res_raw)
+```
+  Next, I coerced the `Ticket` and `Name` variables in `res_raw` to be characters, as our random forest algorithm cannot handle variables with more than 53 factors. Then, I threw out the `PassengerId` column and stored the resulting dataframe in an R object called `res`. I then viewed the summmary of `res`, including its missing values.  
+```{r}
+res_raw$Ticket <- as.character(res_raw$Ticket)
+res_raw$Name <- as.character(res_raw$Name)
+names(res_raw)
+## Throw out PassengerId
+res <- res_raw[,-1]
+summary(res)
+summary(is.na(res))
+```
+  There were quite a few missing values that I dealt with in the following section.  
+First, I imputed the missing values in `Embarked` with the mode, 'S'.
+```{r}
+table(res$Embarked)
+res$Embarked[is.na(res$Embarked)] <- 'S'
+## Check if it worked
+which(is.na(res$Embarked))
+```
+  Great. Next, I imputed the median `Fare` for that particular `Pclass` using the `ave()` function for the missing values in `res$Fare`.  
+```{r}
+res$Fare[is.na(res$Fare)] <- with(res, ave(Fare, Pclass,
+                        FUN = function(x) median(x, na.rm=TRUE)))[is.na(res$Fare)]
+## Check if it worked 
+which(is.na(res$Fare))
+```
+  Before imputing missing values on the `Age` column, I decided to do some feature engineering. I first created a variable called `Title` I extracted from the `Name` column. Thank you to [DataCamp's tutorial](https://www.datacamp.com/community/open-courses/kaggle-tutorial-on-machine-learing-the-sinking-of-the-titanic#gs.8glsQhM) for this idea, and for Kaggle user [tnikaggle](https://www.kaggle.com/tysonni/titanic/extracting-passenger-titiles-in-r/run/51841) for providing code that was cleaner than my original code for this step. To perform this step, I used functions from the `stringr` package.  
+```{r}
+library(stringr)
+res$Title <- NA
+res$Title <- str_sub(res$Name, str_locate(res$Name, ",")[, 1] + 2, str_locate(res$Name, "\\.")[,1]-1)
+## Check if it worked
+table(res$Title)
+which(is.na(res$Title))
+## Convert to factor
+res$Title <- factor(res$Title)
+```
+  Next, I created a variable called `LastName`. Similarly to the `Title` variable, the following code extrated only the surname of each person traveling aboard the Titanic.  
+```{r}
+res$LastName <- NA
+reg.ex1 <- ".*," 
+res$LastName <- str_extract(res$Name, reg.ex1)
+res$LastName <- gsub(",", "", res$LastName)
+## Check if it worked 
+head(table(res$LastName))
+which(is.na(res$LastName)) 
+```
+  Then, I created two new variables, `TktPre` and `TktNum` that take the first half of the `Ticket` variable string and the second half, respectively. I found this suggestion from Kaggle user Stephen McInerney in a [forum on Kaggle](https://www.kaggle.com/c/titanic/forums/t/11127/do-ticket-numbers-mean-anything/136280). For tickets that did not have a charater string before the ticket number, I assigned them a dummy character, '_'. For the several rows where `Ticket` == "LINE", I assigned a dummy `TktNum` of 0. 
+```{r}
+res$TktPre <- NA; res$TktNum <- NA
+reg.ex2 <- ".*\\s|^[A-Z].*(?![0-9])$" 
+res$TktPre <- str_extract(res$Ticket, reg.ex2)
+res$TktPre <- gsub("\\.|\\s|/", "", res$TktPre)
+res$TktPre[is.na(res$TktPre)] <- "_"
+## Convert to factor
+res$TktPre <- factor(res$TktPre)
+## Check if it worked 
+table(res$TktPre)
+which(is.na(res$TktPre))
+
+reg.ex3 <- "\\s[0-9]{1,}|^(?![A-Z]).*"
+res$TktNum <- str_extract(res$Ticket, reg.ex3)
+res$TktNum[is.na(res$TktNum)] <- "0"
+res$TktNum <- as.numeric(res$TktNum)
+## Check if it worked
+str(res$TktNum)
+which(is.na(res$TktNum))
+```
+  Next, I created a simple column called `FamilySize`, again thanks to the motivation from DataCamp's tutorial. This column is constructred by adding together the `SibSp` and `Parch` traveling with a person, plus one (for themselves) to equal total family size on board. Then, I discretized `FamilySize` and created 3 levels of family size: "self", "small", and "large".  
+```{r}
+res$FamilySize <- res$SibSp + res$Parch + 1
+
+res$relFamilySize <- NA
+res$relFamilySize <- ifelse(res$FamilySize == 1, "self", 
+                            ifelse(res$FamilySize <= 4, "small", "large")) 
+res$relFamilySize <- factor(res$relFamilySize)
+## Check if it worked
+table(res$relFamilySize)
+which(is.na(res$relFamilySize))
+```
+  After that, I created another variable called `FamilySurvived`. My motivation was the following table:  
+```{r echo=FALSE}
+t0 <- table(res$LastName, res$Survived)
+names(dimnames(t0)) <- list("LastName", "Survival by LastName")
+print(head(t0, 30))
+```
+  At only 30 rows, the table is just a glimpse, but it became apparent that in many cases people of the same surname (a heuristic for families) survived or died together.  
+I used the `dplyr()` package to create a tibble called `familyAgg`, where I grouped `res` by `LastName` and summarized the `Survived` column for each group. Since 1=Survived and 0=Did Not Survive, the sum was the total number of survivors per group. Then, I iterated over `res$LastName` and assigned the total number of survivors per last name for each row into the new `FamilySurvived` variable. Please note that this was not a perfect feature, as a few apparently unrelated travelers shared a last name on the ship.  
+```{r}
+res$Survived <- as.integer(res$Survived)
+library(dplyr)
+familyAgg <- res %>% group_by(LastName) %>% summarise(n=sum(Survived, na.rm=TRUE))
+familyDf <- data.frame(familyAgg)
+rownames(familyDf) <- familyDf[,1]
+res$FamilySurvived <- NA 
+
+for(i in 1:length(res$LastName)){
+        surname <- res$LastName[i]
+        res$FamilySurvived[i] <- familyDf[surname,2] 
+}
+## Check if it worked
+summary(res$FamilySurvived)
+which(is.na(res$FamilySurvived))
+```
+  Here, I optionally took the `FamilySurvived` variable a step further and calculated the proportion of family members we know survived, because it might be useful for visualization. I got values greater than 1 here, because again, this variable was based on another imperfect variable where people who shared a last name but were unrelated were grouped together. I dealt with this issue in the next step, where I created two new logical variables, `SibSpLive` and `ParchLive`. I checked to make sure that a person whose `FamilySurvived` size was > 0 had at least one `SibSp` or `Parch` traveling with them, respectively. Therefore, these variables more accurately reflected whether we already knew a person's family member survived the sinking.  
+```{r}
+res$PropSurvived <- res$FamilySurvived/res$FamilySize
+
+res$SibSpLive <- ifelse(res$FamilySurvived>0 & res$SibSp!= 0, T, F)
+## Check if it worked
+table(res$SibSpLive)
+which(is.na(res$SibSpLive))
+
+res$ParchLive <- ifelse(res$FamilySurvived>0 & res$Parch!=0, T, F)
+## Check if it worked
+table(res$ParchLive)
+which(is.na(res$ParchLive))
+```
+  Next, I returned to `Age` and its missing values. I used the `corrgram` package to construct a correlogram to visualize which numeric variables are most correlated to `Age`. 
+```{r}
+table(is.na(res$Age))
+library(corrgram)
+corrgram(res)
+```
+  
+  From the map, I saw that the intersection of `Age` and `Pclass` was shaded the darkest, therefore signaling that `Age` and `Pclass` were fairly related. I used the `rcorr()` function from the `Hmisc` package to test its strength. I also tested `rcorr()` on several other non-numeric variables in `res`, and found that `Title` was the only variable that came close to the correlation between `Age` and `Pclass`. 
+```{r}
+library(Hmisc)
+rcorr(res$Age, res$Pclass)
+rcorr(res$Age, res$Title)
+```
+  Next, I used the `ave()` function to impute the median age per passenger class and title for each row with a missing age value. One value at row 980 did not accept an imputed age from the functionn, so I manually assigned it using a less complex model. Finally, I discretized the `Age` variable into four categories: "young child", "child", "young adult", and "adult", and stored them in a new variable called `relAge`.   
+```{r}
+res$Age[is.na(res$Age)] <- with(res, ave(Age, Pclass, Title, 
+                        FUN = function(x) median(x, na.rm=TRUE)))[is.na(res$Age)]
+## Check if it worked 
+summary(res$Age)
+which(is.na(res$Age))
+res[980,] ## Pclass==3
+## For some reason, we have a NA for Age at row 980. Let's give it the median value.
+require(dplyr)
+tbl <- res %>% group_by(Pclass) %>% summarise(median(Age, na.rm=TRUE))
+res$Age[980] <- tbl[3,2]
+## Convert to numeric
+res$Age <- as.numeric(res$Age)
+
+res$relAge <- NA
+res$relAge <- ifelse(res$Age < 7, "young child", 
+                        ifelse(res$Age < 18, "child", 
+                        ifelse(res$Age < 41, "young_adult", "adult")))
+## Check if it worked
+table(res$relAge)
+which(is.na(res$relAge))
+## Convert to factor
+res$relAge <- factor(res$relAge) 
+```
+  Then, really wanting to use the `LastName` variable, but restricted by the random forest algorithm's limits, I created a new variable called `SurnameL` using only the first letter of a family's last name. Then, I did the same with `Cabin`, storing the first letter of each cabin in a new variable called `CabinL`. Looking at the [Titanic deckplans](https://www.encyclopedia-titanica.org/titanic-deckplans/), I saw that cabins were named according to floor of the ship. I thought this could be useful.  
+```{r}
+res$SurnameL <- NA
+res$SurnameL <- factor(substr(res$LastName, start=1, stop=1))
+## Check if it worked
+table(res$SurnameL)
+which(is.na(res$SurnameL))
+
+res$CabinL <- NA
+res$CabinL <- factor(substr(res$Cabin, start=1, stop=1))
+## Check if it worked
+table(res$CabinL)
+table(is.na(res$CabinL))
+```
+  It should be noted that, at this point I dealt with extremely sparse data. The `Cabin` and `CabinL` variables had 1014 missing values and only 295 filled values each. By proceeding with these variable, I was at a great risk of overfitting my random forest model. Nonetheless, I continued because I had reason to believe I could improve my model with cabin information. Beore I could use the `CabinL` variable, however, I needed to impute the missing values. Using the Titanic deckplan, I assigned each cabin letter its relative floor: Cabins beginning with 'A' were on the uppermost part of the ship, hence the value '1'. 'G' cabins were the lowest on the ship and received the value `7`. For the single cabin letter == 'T', which I could not find in the diagram, I assigned it floor 0. The passenger was traveling in 1st class, and 1st class occupied the upper decks according to the diagram. These floor numbers were stored in a new variable called `CabinFloor`. As an integer, I figured I would have better success at estimating `CabinFloor` than I would using unordered factor levels (i.e. letters).  
+```{r}
+res$CabinFloor <- NA
+res$CabinFloor <- ifelse(res$CabinL=="A", 1, 
+                         ifelse(res$CabinL=="B", 2, 
+                        ifelse(res$CabinL=="C", 3, 
+                        ifelse(res$CabinL=="D", 4, 
+                        ifelse(res$CabinL=="E", 5,
+                        ifelse(res$CabinL=="F", 6, 
+                        ifelse(res$CabinL=="G", 7, 
+                        ifelse(res$CabinL=="T", 0, NA))))))))
+res$CabinFloor <- as.integer(res$CabinFloor)
+```
+  I used a `corrgram()` to determine which numeric variables were most correlated with `CabinFloor`. I found that `Pclass` had the boldest shading at the intersection with `CabinFloor`. Other variables did not come close to this correlation, so I imputed missing `CabinFloor` values using the mean `Pclass` and the `ave()` function.  
+```{r}
+corrgram(res)
+rcorr(res$CabinFloor, res$Pclass)
+res$CabinFloor[is.na(res$CabinFloor)] <- with(res, ave(CabinFloor, Pclass,
+                        FUN = function(x) mean(x, na.rm=TRUE)))[is.na(res$CabinFloor)]
+## Check if it worked
+summary(res$CabinFloor)
+which(is.na(res$CabinFloor))
+```
+  Based on the nature of my previous model, I got numeric values rather than integers for my `CabinFloor` variable. Instead of rounding these values, I proceeded by discretizing `CabinFloor` into "upper half" and "lower half" values. I built a new column called `relCabinFloor` that did this.  
+```{r}
+res$relCabinFloor <- NA
+res$relCabinFloor <- ifelse(res$CabinFloor < 4, "upper half", "lower half")
+res$relCabinFloor <- factor(res$relCabinFloor)
+## Check if it worked
+table(res$relCabinFloor)
+which(is.na(res$relCabinFloor))
+```
+  Next, I re-split the data back into training and testing sets. I removed variables I did not plan to use in my random forest algorithm.  
+```{r}
+names(res)
+## Remove Name (3), Ticket (8), Cabin (10), LastName (13), FamilySurvived (18), 
+## PropSurvived (19), CabinL (24), CabinFloor (25)
+train <- res[1:891, c(-3, -8, -10, -13, -18, -19, -24, -25)] 
+test <- res[892:1309, c(-3, -8, -10, -13, -18, -19, -24, -25)] 
+```
+  Finally, I finished pre-processing the data and I was ready to begin exploring it.  
+
+### Explore the data  
+I explored the different variables in `res` to see which ones were more likely to affect my random forest algorithm. I used a mixture of the base graphics and `ggplot2` package for the visualizations.  
+```{r}
+names(train)
+library(ggplot2)
+```
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=factor(Pclass))) + geom_bar(stat="count", position="dodge") + ggtitle("Survival by Pclass") + theme_bw()
+```
+  
+  Passengers in 3rd class were much more likely to die, while passengers in 1st class were more likely to survive.  
+```{r echo=FALSE}
+plot(factor(Survived) ~ Sex, data = res)
+title(main="Survival by Gender")
+```
+  
+  Females were much more likely to survive than their male counterparts.  
+```{r echo=FALSE}
+ggplot(data=train, aes(Age, Survived)) + geom_jitter(height=0.03, alpha=0.2) + stat_smooth(method="loess", alpha=0.2, col="red") + ggtitle("Survival by Age") + theme_bw()
+```
+  
+  Older passengers were less likely to survive.    
+```{r echo=FALSE}
+ggplot(data=train, aes(FamilySize, Survived)) + geom_jitter(height=0.03, alpha=0.2) + stat_smooth(method="loess", alpha=0.2, col="red") + ggtitle("Survival by FamilySize") + theme_bw()
+```
+  
+  Passengers with more siblings, spouses, parents, and children on board were less likely to survive. However, for family sizes between 1 and approximately 4, there was an increase in passenger survival.  
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=factor(relFamilySize))) + geom_bar(stat="count", position="dodge") + ggtitle("Surival by relFamilySize") + theme_bw() 
+```
+  
+  In agreement with the previous plot, individuals traveling alone and large families (>4) were much less likely to survive, whereas small families (<=4) had a higher chance of survival.   
+```{r echo=FALSE}
+ggplot(data=train, aes(Fare, Survived)) + geom_point(alpha=0.2) + stat_smooth(method="loess", alpha=0.2, col="forestgreen") + ggtitle("Survival by Fare") + theme_bw()
+```
+  
+  Passengers who paid more for their fare were more likely to survive.  
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=Embarked)) + geom_bar() + ggtitle("Survival by Embarked") + theme_bw()
+```
+  
+  Passengers who embarked at port "S" were less likely to survive, but then again, "S" was the mode for these data.   
+```{r echo=FALSE}
+t1 <- table(train$Title, train$Survived)
+names(dimnames(t1)) <- list("Title", "Survival by Title")
+print(t1)
+```
+  
+  This table shows that those with titles such as "Miss" and "Mrs" were more likely to survive, while those with titles such as "Mr" and "Rev" were more likely to die.  
+```{r echo=FALSE}
+t2 <- table(train$TktPre, train$Survived)
+names(dimnames(t2)) <- list("TktPre", "Survival by TktPre")
+print(t2)
+```
+  
+  In some cases, those who had a similar ticket prefix survived together, although this assumption is not very robust.  
+```{r echo=FALSE}
+t3 <- table(train$TktNum, train$Survived)
+names(dimnames(t3)) <- list("TktNum", "Survival by TktNum")
+print(head(t3, 12))
+```
+  
+  It is difficult to draw any conclusions from the data about survival versus ticket suffix.  
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=SibSpLive)) + geom_bar() + ggtitle("Survival by SibSpLive") + theme_bw()
+```
+  
+  Passengers whose sibling or spouse survived were much more likely to survive than those who did not have a surviving sibling or spouse.  
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=ParchLive)) + geom_bar() + ggtitle("Survival by ParchLive") + theme_bw()
+```
+  
+  Passengers whose parent or child survived were also much more likely to survive than those who did not have a surviving parent or child.  
+```{r echo=FALSE}
+t4 <- table(train$SurnameL, train$Survived)
+names(dimnames(t4)) <- list("SurnameL", "Survival by SurnameL")
+print(t4)
+```
+  
+  It is difficult to draw any conclusions from the data about survival versus first letter of family name.  
+```{r echo=FALSE}
+ggplot(data=train, aes(factor(Survived), fill=factor(relCabinFloor))) + geom_bar(stat="count", position="dodge") + ggtitle("Surival by relCabinFloor") + theme_bw() 
+```
+  
+  Passengers with a cabin in the lower half of the ship were less likely to survive than passengers in the upper half.  
+  Finally, I looked at the `corrgram()` with respect to `Survived` and tested a few variables' correlation with `Survived`.  
+```{r}
+corrgram(res)
+rcorr(res$Survied, res$Title)
+rcorr(res$Survived, res$Pclass)
+rcorr(res$Survived, res$Fare)
+rcorr(res$Survived, res$SibSpLive)
+rcorr(res$Survived, res$ParchLive)
+```
+  
+## Build a model  
+Finally, I created a random forest algorithm using the `randomForest` package in R. For my formula, I used every variable in `train` except for `Embarked` and `relAge`.  
+```{r}
+library(randomForest)
+set.seed(0)
+rf <- randomForest(factor(Survived)~ Pclass+Sex+Age+SibSp+Parch+Fare+Title+ 
+                           ParchLive+SibSpLive+relCabinFloor+TktPre+TktNum+  
+                           FamilySize+SurnameL+relFamilySize, data=train, ntree=401)
+importance(rf)
+print(rf)
+```
+  
+## Results  
+The solution to the test set was readily available on the web. I found it at <http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.csv>. After cleaning up the data, I used the answer to validate my predictions on my local machine. I also used the solution to construct an ROC curve and calculate area under the curve (AUC). I stored the test solution in an R object called `test_soln`.  
+```{r echo=FALSE}
+soln_raw <- read.csv("titanic.csv", na.strings="")
+res_arr <- arrange(res_raw, Name)
+soln_arr <- arrange(soln_raw, name)
+Survived <- soln_arr$survived
+PassengerId <- res_arr$PassengerId
+soln_bind <- data.frame(cbind(PassengerId, Survived))
+soln <- arrange(soln_bind, PassengerId) 
+test_soln <- soln[892:1309,]
+test_soln$Survived <- factor(test_soln$Survived)
+```
+  Then, I tested my model's prediction.  
+```{r}
+out.rf <- predict(rf, newdata=test)
+mean(out.rf == test_soln$Survived)
+```
+  I liked this accuracy, so I assigned my predicted survival to my `test` dataframe. Then, I created an ROC plot with my model using the `ROCR` package.   
+```{r}
+test$Survived <- out.rf 
+library(ROCR)
+p <- predict(rf, newdata=test, type="class")
+pr <- prediction(as.numeric(p), as.numeric(test_soln$Survived))
+prf <- performance(pr, measure="tpr", x.measure="fpr")
+plot(prf)
+```
+  
+  Finally, I calculated the AUC.  
+```{r}
+auc <- performance(pr, measure="auc")
+auc <- auc@y.values[[1]]
+auc
+``` 
+  I submitted the final prediction as a dataframe to Kaggle.  
+```{r}
+my_soln <- data.frame(PassengerId = test_raw$PassengerId, Survived=test$Survived)
+write.csv(my_soln, "my_titanic_soln.csv", row.names=FALSE)
+```
+  
+## Conclusion  
+For some reason, my code run in `knitr` produces a slightly lower accuracy than what I got in my RStudio terminal. Using this code on my local machine, with the seed also set to 0, gave me a slightly higher accuracy. In the future, I will look more closely at why this might have occurred. For now, find my original code that earned my high score on Kaggle at 

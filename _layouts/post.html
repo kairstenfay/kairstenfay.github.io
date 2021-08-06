@@ -1,0 +1,17 @@
+---
+layout: default
+notes: active
+---
+<div class="white-bg">
+  <nav>
+    <a href="javascript:history.back()">« Back</a>
+  </nav>
+
+  <h1 class="blog">{{ page.title }}</h1>
+  <p class="meta">{{ page.date | date_to_string }}</p>
+
+  <div class="post">
+    {{ content }}
+  </div>
+
+</div>
