@@ -12,7 +12,12 @@ const CVPage = (props) => {
       isVisible={props.isVisible}>
         <Card>
           <p>
-            See <A>my LinkedIn</A>.
+            <A href="https://linkedin.com/in/kairsten-fay">LinkedIn</A>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            <A href="https://scholar.google.com/citations?user=opfWq18AAAAJ&hl=en">Google Scholar</A>
           </p>
         </Card>
     </Page>

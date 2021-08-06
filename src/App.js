@@ -31,7 +31,6 @@ function App() {
   }, [selection]);
 
   return (
-    <div>
     <div className="grid">
       <Tooltip
         isShown={tooltipIsShown}
@@ -136,8 +135,6 @@ function App() {
       <CVPage isVisible={cvIsVisible} />
       </div>
     </div>
-      <footer>test</footer>
-      </div>
   );
 }
 

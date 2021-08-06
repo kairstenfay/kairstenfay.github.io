@@ -2,11 +2,13 @@ import React from 'react';
 
 const A = (props) => {
     return (
-        <a className="text-indigo-500"
+        <a className="text-indigo-500 text-xl"
             href={props.href}
             onClick={props.onClick}
-            target="_blank">
-            {props.children}
+            target="_blank"
+            rel="noreferrer"
+            >
+        {props.children}
         </a>
     )
 };
