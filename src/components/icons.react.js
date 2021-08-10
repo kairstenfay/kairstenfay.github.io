@@ -39,7 +39,6 @@ const Icon = props => {
         setTooltipIsShown(true);
       }}
       onMouseLeave={e => {
-        console.log(e);
         if (!isSelected) {
           setColor(defaultColor);
           setOutlineColor(defaultOutline);
