@@ -16,11 +16,16 @@ const AboutPage = (props) => {
             background. I enjoy teaching, making art and code, and discussing
             career advice.
           </p>
-        </Card>
-        <Card>
           <p>
             Please feel free to email me at{' '}
-            <A href="mailto:kairsten.fay@gmail.com">kairsten.fay@gmail.com</A>.
+            <A href="mailto:kairsten.fay@gmail.com">
+              kairsten.fay@gmail.com
+            </A>{' '}
+            or reach out on{' '}
+            <A href="https://twitter.com/databae_">
+              Twitter
+            </A>
+            .
           </p>
         </Card>
     </Page>
