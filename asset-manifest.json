@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.29d35c00.chunk.css",
-    "main.js": "/static/js/main.a603ae5d.chunk.js",
-    "main.js.map": "/static/js/main.a603ae5d.chunk.js.map",
+    "main.css": "/static/css/main.d5288545.chunk.css",
+    "main.js": "/static/js/main.a597d981.chunk.js",
+    "main.js.map": "/static/js/main.a597d981.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.308946d2.js",
     "runtime-main.js.map": "/static/js/runtime-main.308946d2.js.map",
-    "static/js/2.0d2e2e65.chunk.js": "/static/js/2.0d2e2e65.chunk.js",
-    "static/js/2.0d2e2e65.chunk.js.map": "/static/js/2.0d2e2e65.chunk.js.map",
+    "static/js/2.67748a11.chunk.js": "/static/js/2.67748a11.chunk.js",
+    "static/js/2.67748a11.chunk.js.map": "/static/js/2.67748a11.chunk.js.map",
     "static/js/3.ccdc30d0.chunk.js": "/static/js/3.ccdc30d0.chunk.js",
     "static/js/3.ccdc30d0.chunk.js.map": "/static/js/3.ccdc30d0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.29d35c00.chunk.css.map": "/static/css/main.29d35c00.chunk.css.map",
-    "static/js/2.0d2e2e65.chunk.js.LICENSE.txt": "/static/js/2.0d2e2e65.chunk.js.LICENSE.txt"
+    "static/css/main.d5288545.chunk.css.map": "/static/css/main.d5288545.chunk.css.map",
+    "static/js/2.67748a11.chunk.js.LICENSE.txt": "/static/js/2.67748a11.chunk.js.LICENSE.txt",
+    "static/media/quasar-progress-pride-flag.05bf08dd.png": "/static/media/quasar-progress-pride-flag.05bf08dd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.308946d2.js",
-    "static/js/2.0d2e2e65.chunk.js",
-    "static/css/main.29d35c00.chunk.css",
-    "static/js/main.a603ae5d.chunk.js"
+    "static/js/2.67748a11.chunk.js",
+    "static/css/main.d5288545.chunk.css",
+    "static/js/main.a597d981.chunk.js"
   ]
 }
