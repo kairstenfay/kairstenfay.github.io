@@ -4,12 +4,7 @@ const Card = (props) => {
   return (
     <div className="md:p-8 p-2 bg-white rounded-md max-w-lg min-w-m">
         <a href={props.href} target="_blank" rel="noreferrer">
-            <img
-            className="rounded-md w-full"
-            src={props.img}
-            alt={props.alt}
-            target="_blank"
-            />
+            {props.cover}
         </a>
 
         <p className="text-indigo-500 font-semibold text-base mt-2">
