@@ -1,20 +1,27 @@
-import './App.css';
-import './index.css';
-import React from 'react';
-import {useEffect, useState} from 'react';
+import "./App.css";
+import "./index.css";
+import React from "react";
+import { useEffect, useState } from "react";
 
-import AboutPage from './components/AboutPage.react';
-import CVPage from './components/CVPage.react';
-import HomePage from './components/HomePage.react';
-import Nav from './components/Nav.react';
-import {AboutIcon, CodingIcon, CVIcon, HomeIcon, SpeakingIcon, WritingIcon} from './components/icons.react';
-import Tooltip from './components/Tooltip.react';
+import AboutPage from "./components/AboutPage.react";
+import CVPage from "./components/CVPage.react";
+import HomePage from "./components/HomePage.react";
+import Nav from "./components/Nav.react";
+import {
+  AboutIcon,
+  CodingIcon,
+  CVIcon,
+  HomeIcon,
+  SpeakingIcon,
+  WritingIcon,
+} from "./components/icons.react";
+import Tooltip from "./components/Tooltip.react";
 
 /* Source for this tailwind theme:
  * https://tailwindcomponents.com/component/blogs-posts-card
  */
 function App() {
-  const allFilters = ['Coding', 'Speaking', 'Writing'];
+  const allFilters = ["Coding", "Speaking", "Writing"];
 
   const [filters, setFilters] = useState(allFilters);
   const [aboutIsVisible, setAboutIsVisible] = useState(false);
@@ -22,12 +29,12 @@ function App() {
   const [cvIsVisible, setCVIsVisible] = useState(false);
   const [tooltipIsShown, setTooltipIsShown] = useState(false);
   const [tooltipCoordinates, setTooltipCoordinates] = useState([0, 0]);
-  const [tooltipText, setTooltipText] = useState('');
-  const [selection, setSelection] = useState('Home');
+  const [tooltipText, setTooltipText] = useState("");
+  const [selection, setSelection] = useState("Home");
 
   useEffect(() => {
     setTooltipIsShown(false);
-    setTooltipText('');
+    setTooltipText("");
   }, [selection]);
 
   return (
@@ -48,12 +55,13 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('Home');
+            setSelection("Home");
             setAboutIsVisible(false);
             setCVIsVisible(false);
             setFilters(allFilters);
             setHomeIsVisible(true);
-      }}/>
+          }}
+        />
         <AboutIcon
           tooltipIsShown={tooltipIsShown}
           setTooltipIsShown={setTooltipIsShown}
@@ -62,11 +70,12 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('About Me');
+            setSelection("About Me");
             setHomeIsVisible(false);
             setAboutIsVisible(true);
             setCVIsVisible(false);
-        }} />
+          }}
+        />
         <WritingIcon
           tooltipIsShown={tooltipIsShown}
           setTooltipIsShown={setTooltipIsShown}
@@ -75,12 +84,13 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('Writing');
+            setSelection("Writing");
             setAboutIsVisible(false);
             setCVIsVisible(false);
-            setFilters(['Writing']);
+            setFilters(["Writing"]);
             setHomeIsVisible(true);
-        }} />
+          }}
+        />
         <CodingIcon
           tooltipIsShown={tooltipIsShown}
           setTooltipIsShown={setTooltipIsShown}
@@ -89,12 +99,13 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('Coding');
+            setSelection("Coding");
             setAboutIsVisible(false);
             setCVIsVisible(false);
-            setFilters(['Coding']);
+            setFilters(["Coding"]);
             setHomeIsVisible(true);
-        }} />
+          }}
+        />
         <SpeakingIcon
           tooltipIsShown={tooltipIsShown}
           setTooltipIsShown={setTooltipIsShown}
@@ -103,12 +114,13 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('Speaking');
+            setSelection("Speaking");
             setAboutIsVisible(false);
             setCVIsVisible(false);
-            setFilters(['Speaking']);
+            setFilters(["Speaking"]);
             setHomeIsVisible(true);
-        }} />
+          }}
+        />
         <CVIcon
           tooltipIsShown={tooltipIsShown}
           setTooltipIsShown={setTooltipIsShown}
@@ -117,22 +129,21 @@ function App() {
           setTooltipText={setTooltipText}
           selection={selection}
           onClick={() => {
-            setSelection('CV');
+            setSelection("CV");
             setHomeIsVisible(false);
             setAboutIsVisible(false);
             setCVIsVisible(true);
-        }} />
+          }}
+        />
       </Nav>
-    <div className="grid ml-10">
-      <header className="h-20 border-b border-gray-300 border-solid">
-        <h1 className="text-4xl">Kairsten Fay</h1>
-      </header>
+      <div className="grid ml-10">
+        <header className="h-20 border-b border-gray-300 border-solid">
+          <h1 className="text-4xl">Kairsten Fay</h1>
+        </header>
 
-      <HomePage
-        filters={filters}
-        isVisible={homeIsVisible} />
-      <AboutPage isVisible={aboutIsVisible} />
-      <CVPage isVisible={cvIsVisible} />
+        <HomePage filters={filters} isVisible={homeIsVisible} />
+        <AboutPage isVisible={aboutIsVisible} />
+        <CVPage isVisible={cvIsVisible} />
       </div>
     </div>
   );
