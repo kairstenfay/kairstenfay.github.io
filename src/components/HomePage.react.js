@@ -7,7 +7,24 @@ import Page from "./Page.react";
 import quasar from "../img/quasar-progress-pride-flag.png";
 import YouTubeIFrame from "./YouTubeIFrame.react";
 
+const META_PEEKING_BEHIND_THE_SCENES_BLOG_LINK = "https://developers.facebook.com/blog/post/2021/10/18/peeking-behind-the-scenes-of-facebook-open-source/"
 const cards = [
+  {
+    section: "Writing",
+    title: "Peeking Behind the Scenes of Facebook Open Source",
+    cover: (
+      <Image
+        src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.2365-6/245497710_627466131745580_8430609489806574834_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=ad8a9d&_nc_ohc=xrUOZ_Auf7EAX8c-qII&_nc_ht=scontent-sea1-1.xx&_nc_rmd=260&oh=44fb15fd1e02a140a6775a044cdafcb3&oe=6187A96F"
+        alt="A drawing of an open doorway with a mouse cursor hovering in front of it."
+      />
+    ),
+    href: META_PEEKING_BEHIND_THE_SCENES_BLOG_LINK,
+    children: (
+      <P>
+        I recently published an article on the <A href={META_PEEKING_BEHIND_THE_SCENES_BLOG_LINK}>Meta Developers Blog</A> where I compare being part of Facebook’s Open Source Tooling team to working in a restaurant’s back of the house.
+      </P>
+    )
+  },
   {
     section: "Speaking",
     title: "Bassnectar",
