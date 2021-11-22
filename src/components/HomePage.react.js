@@ -14,7 +14,7 @@ const cards = [
     title: "Peeking Behind the Scenes of Facebook Open Source",
     cover: (
       <Image
-        src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.2365-6/245497710_627466131745580_8430609489806574834_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=ad8a9d&_nc_ohc=xrUOZ_Auf7EAX8c-qII&_nc_ht=scontent-sea1-1.xx&_nc_rmd=260&oh=44fb15fd1e02a140a6775a044cdafcb3&oe=6187A96F"
+        src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.2365-6/245497710_627466131745580_8430609489806574834_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=ad8a9d&_nc_ohc=Igh7EEUjE1kAX9UlZ5q&_nc_ht=scontent-sea1-1.xx&oh=9880ee86044198410167e4bb7230bcb9&oe=619F646F"
         alt="A drawing of an open doorway with a mouse cursor hovering in front of it."
       />
     ),
